@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:uno",
+    "programmer": "arduinoasisp",
+    "port": "COM4",
+    "output": "../learning-arduino-outputs"
+}

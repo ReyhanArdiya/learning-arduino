@@ -1,6 +1,7 @@
 {
     "board": "arduino:avr:uno",
-    "programmer": "arduinoasisp",
-    "port": "COM4",
-    "output": "../learning-arduino-outputs"
+    "programmer": "avrispmkii",
+    "port": "COM5",
+    "output": "../learning-arduino-outputs",
+    "sketch": "freecodecamp_arduino-courses-for-everybody\\2_led-blink-project\\2_led-blink-project.ino"
 }

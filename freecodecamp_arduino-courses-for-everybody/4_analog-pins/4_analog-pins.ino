@@ -1,11 +1,15 @@
-const int RED_PIN = A4;
+// Use potentiometer to read analog value
+const byte READ_PIN = A2;
 
 void setup()
 {
-    pinMode(RED_PIN, OUTPUT);
+    pinMode(READ_PIN, INPUT);
+    Serial.begin(9600);
 }
 
 void loop()
 {
-    analogWrite(RED_PIN, 255);
+    float sensorValue = analogRead(READ_PIN) * 5. / 1023.; // 0-1023 -> 0-5v
+    Serial.println(sensorValue);
+    delay(500);
 }

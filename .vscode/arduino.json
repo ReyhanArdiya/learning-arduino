@@ -3,5 +3,5 @@
     "programmer": "avrispmkii",
     "port": "COM5",
     "output": "../learning-arduino-outputs",
-    "sketch": "freecodecamp_arduino-courses-for-everybody\\4_analog-pins\\4_analog-pins.ino"
+    "sketch": "freecodecamp_arduino-courses-for-everybody\\6_rgb_led\\6_rgb_led.ino"
 }

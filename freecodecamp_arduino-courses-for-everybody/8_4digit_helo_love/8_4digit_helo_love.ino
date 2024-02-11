@@ -1,4 +1,6 @@
 #include "Arduino.h"
+#include <TimeOut.h>
+
 // MODE CA
 const String MODE = "CA"; // CA or CC
 int low = HIGH;
@@ -19,6 +21,13 @@ const byte G = 12;
 const byte DP = 13;
 
 const byte DELAY = 3;
+bool isHelo = true;
+Interval changeIsHelo;
+
+void toggleIsHelo()
+{
+    isHelo = !isHelo;
+}
 
 void setup()
 {
@@ -41,35 +50,21 @@ void setup()
     pinMode(F, OUTPUT);
     pinMode(G, OUTPUT);
     pinMode(DP, OUTPUT);
-}
 
-int threshold = 100;
-int count = 0;
-bool isHelo = true;
+    changeIsHelo.interval(1000, toggleIsHelo);
+}
 
 void loop()
 {
+    Interval::handler();
     if (isHelo == true)
     {
-
         helo();
-        count++;
-
-        if (count >= threshold)
-        {
-            isHelo = false;
-        }
     }
     else
     {
         love();
         digitalWrite(DP, high);
-        count--;
-
-        if (count <= 0)
-        {
-            isHelo = true;
-        }
     }
 }
 

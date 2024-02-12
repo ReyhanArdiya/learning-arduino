@@ -89,8 +89,6 @@ void loop()
 
         timerStarted = true;
         Serial.println(countdown);
-        // This is to offset reduceCountdownTime() being called immediately after the countdown is set and reducing 1 from the user's input
-        countdown++;
         sevseg.setNumber(countdown, 0);
     }
 
@@ -111,8 +109,8 @@ int getUserInput()
 
 void reduceCountdownTime()
 {
-    countdown--;
     sevseg.setNumber(countdown, 0);
+    countdown--;
 }
 
 void playBuzzer()
